@@ -5,17 +5,13 @@ import lombok.Data;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
-
-/**
- * 系统部门实体
- */
 @Data
 @Entity
-@Table(name = "sys_dept")
-public class SysDeptPo extends BasePo{
+@Table(name = "sys_module")
+public class SysModulePo extends BasePo{
 
-    @Column(name = "dept_name")
-    private String deptName;
+    @Column(name = "name")
+    private String name;
 
     @Column(name = "parent_id")
     private String parentId;

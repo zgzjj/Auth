@@ -3,20 +3,17 @@ package com.zjj.auth.entity.po;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
-import javax.persistence.*;
-import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  * 系统用户实体
  */
+@Data
 @Entity
 @Table(name = "sys_user")
-@Data
-public class SysUserPo {
-    @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Integer id;
+public class SysUserPo  extends BasePo{
 
     @Column(name = "username")
     private String username;
@@ -38,20 +35,5 @@ public class SysUserPo {
     private String email;
 
     @Column(name = "dept_id")
-    private Integer deptId;
-
-    @Column(name = "operator")
-    private String operator;
-
-    @Column(name = "operator_ip")
-    private String operatorIp;
-
-    @Column(name = "operator_time")
-    private Date operatorTime;
-
-    @Column(name = "status")
-    private Integer status;
-
-    @Column(name = "remark")
-    private String remark;
+    private String deptId;
 }

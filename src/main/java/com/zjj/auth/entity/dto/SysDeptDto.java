@@ -6,6 +6,7 @@ import lombok.Data;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Data
 @ApiModel(value="SysDeptDto对象",description="部门对象")
@@ -19,9 +20,10 @@ public class SysDeptDto {
     private String deptName;
 
     @ApiModelProperty(value="父级部门Id",name="parentId")
-    private Integer parentId;
+    private Integer parentId=0;
 
     @ApiModelProperty(value="部门排序",name="seq")
+    @NotNull(message = "部门的显示顺序不能为空")
     private Integer seq;
 
     @ApiModelProperty(value="部门说明",name="seq")
